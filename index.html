@@ -22,7 +22,7 @@
       <nav class="menu-navigation">
       <a href="index.html" class="logo"><span class="logo-accent-main">Web</span><span class="logo-accent-black">Studio</span></a>
         <ul class="navigation">  
-          <li><a href="index.html" class="navigation-link" id="link1">Agencja</a></li>
+          <li><a href="index.html" class="navigation-link navigation-link-active" id="link1">Agencja</a></li>
           <li><a href="portfolio.html" class="navigation-link" id="link2">Portfolio</a></li>
           <li><a href="index.html" class="navigation-link navigation-link-last" id="link3">Kontakt</a></li>
         </ul>
@@ -40,7 +40,7 @@
     <section class="section order-container">
     <div class="container">
       <h1 class="container-text">efektywne rozwiązania<br/>dla Waszego biznesu</h1>
-      <button type="button" class="order-button">Zamów usługę</button>
+      <button type="button" class="order-button" data-modal-open>Zamów usługę</button>
     </div>
     </section>
 
@@ -89,9 +89,9 @@
     <div class="container">
     <h2>Czym się zajmujemy</h2>
       <ul class="offer-list">
-      <li class="offer-list-item"><img src="./images/US1.jpg" alt="Jedna usługa" width="370" height="294" id="us1"></li>
-      <li class="offer-list-item"><img src="./images/US2.jpg" alt="Druga usługa" width="370" height="294" id="us2"></li>
-      <li class="offer-list-item offer-list-item-last"><img src="./images/US3.jpg" alt="Trzecia usługa" width="370" height="294" id="us3"></li>
+      <li class="offer-list-item"><div class="offer-list-item-style"><img src="./images/US1.jpg" alt="Jedna usługa" width="370" height="294" id="us1"><h3 class="offer-list-description">APLIKACJE KOMPUTEROWE</h3></div></li>
+      <li class="offer-list-item"><div class="offer-list-item-style"><img src="./images/US2.jpg" alt="Druga usługa" width="370" height="294" id="us2"><h3 class="offer-list-description">APLIKACJE MOBILNE</h3></div></li>
+      <li class="offer-list-item offer-list-item-last"><div class="offer-list-item-style"><img src="./images/US3.jpg" alt="Trzecia usługa" width="370" height="294" id="us3"><h3 class="offer-list-description">ROZWIĄZANIA GRAFICZNE</h3></div></li>
       </ul>
     </div>
     </section>
@@ -238,6 +238,14 @@
     </div>
   </footer>
 
+  <!-- MODAL WINDOW -->
+  <div class="backdrop is-hidden" data-modal>
+    <div class="modal">
+      <button type="button" class="close-btn" data-modal-close>x</button>
+    </div>
+  </div>
+
+  <script src="./js/modal.js"></script>
 </body>
   
 </html>

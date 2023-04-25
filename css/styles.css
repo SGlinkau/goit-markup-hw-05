@@ -78,12 +78,31 @@ body {
 
 .navigation-link {
   text-decoration: none;
+  position: relative;
   color: var(--default-text-color);
   font-size: 14px;
   font-weight: 500;
   line-height: 1.142;
   letter-spacing: 0.02em;
   margin-right: 46px;
+}
+
+.navigation-link::after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 44.5px;
+  right: 0;
+  width: 0;
+  height: 5px;
+  background-color: #2196f3;
+  border-radius: 4px;
+  transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navigation-link:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 .navigation-link-last{
@@ -98,6 +117,22 @@ body {
   font-size: 14px;  
   line-height: 1.142;
   letter-spacing: 0.02em;  
+}
+
+.navigation-link-active {
+  color :var(--brand-color);
+}
+
+.navigation-link-active::after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 44.5px;
+  width: 100%;
+  height: 5px;
+  background-color: #2196f3;
+  border-radius: 4px;
+  transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts{
@@ -280,6 +315,33 @@ body {
   display: flex;
   padding-top: 50px;
   justify-content: space-between;
+}
+
+.offer-list-item-style {
+  position: relative;
+}
+
+.offer-list-description {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+
+  background: rgba(47, 48, 58, 0.8);
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
 }
 
 /* =====TEAM SECTION===== */
@@ -596,4 +658,51 @@ body {
 .social-media-list-link:focus {
   background-color: #2196f3;
   fill: #fff;
+}
+
+/* ===== MODAL WINDOW ===== */
+
+.backdrop {
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.2);
+  transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 99;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  min-height: 581px;
+  border-radius: 4px;
+  background-color: var(--basic-white);
+  transform: translate(-50%, -50%);
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--basic-white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
